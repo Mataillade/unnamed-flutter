@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:unnamed/widgets/Contact/contact.widget.dart';
 
 class Contact extends StatelessWidget {
+  const Contact({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final List<String> entries = <String>['A', 'B','C', 'D', 'E', 'F'];
 
     return  Scaffold(
       appBar: AppBar(
@@ -15,9 +17,17 @@ class Contact extends StatelessWidget {
         centerTitle: false,
         titleSpacing: 24,
       ),
-      body:  Container(
-        child: ContactWidget(),
-      ),
+      body:ListView.separated(
+        itemCount: entries.length,
+        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
+        itemBuilder: (BuildContext context, int index){
+          return  Container(
+              margin: const EdgeInsets.symmetric(vertical: 10) ,
+              child: const ContactWidget()
+          );
+        },
+        separatorBuilder: (BuildContext context, int index) => const Divider(),
+      ) ,
     );
   }
 
