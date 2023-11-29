@@ -1,9 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:unnamed/util/exentions/colors.extentions.dart';
 import 'package:unnamed/widgets/Contact/contact_message.widget.dart';
 
 class Chat extends StatelessWidget {
   final List<String> entries = <String>['A', 'B','C', 'D', 'E', 'F'];
+
+   Chat({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +14,7 @@ class Chat extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         automaticallyImplyLeading: false,
-        title: const Text("Chat", style: TextStyle(color: Colors.black)),
+        title: const Text("Chat", style: TextStyle(color: CustomColors.blackk)),
         centerTitle: false,
         titleSpacing: 24,
       ),
@@ -23,7 +25,7 @@ class Chat extends StatelessWidget {
           itemBuilder: (BuildContext context, int index) {
           return Container(
             margin:const EdgeInsets.symmetric(vertical: 10),
-            child: ContactMessageWidget()
+            child: const ContactMessageWidget()
           );
         }
       )

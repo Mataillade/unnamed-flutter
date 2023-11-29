@@ -4,6 +4,8 @@ import 'package:unnamed/screens/home/home.dart';
 import 'package:unnamed/widgets/buttons/button.widget.dart';
 import 'package:unnamed/widgets/inputs/text_input.widget.dart';
 
+import '../../util/exentions/colors.extentions.dart';
+
 class Login extends StatelessWidget{
   const Login({super.key});
 
@@ -16,7 +18,7 @@ class Login extends StatelessWidget{
       resizeToAvoidBottomInset: true,
       extendBody: true,
       appBar: AppBar(
-        titleTextStyle:const TextStyle(color: Colors.black) ,
+        titleTextStyle:const TextStyle(color: CustomColors.blackk) ,
         backgroundColor: Colors.white,
         elevation: 0,
         title:const Row(
@@ -45,7 +47,7 @@ class Login extends StatelessWidget{
                 height: 100,
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Colors.secondary_background,
+                  color: CustomColors.secondary_background,
                 ),
                 child: const Icon(
                     Icons.person_outlined,
@@ -64,7 +66,7 @@ class Login extends StatelessWidget{
                     FractionallySizedBox(
                       widthFactor: 0.8,
                       child: ButtonWidget(onPressed:() {
-                        Navigator.push(context,  MaterialPageRoute(builder: (context)=> Home()));
+                        Navigator.push(context,  MaterialPageRoute(builder: (context)=> const Home()));
                       }, text: 'Save',),
                     ),
                   ],

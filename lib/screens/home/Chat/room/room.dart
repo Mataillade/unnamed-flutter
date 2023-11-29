@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:unnamed/util/exentions/colors.extentions.dart';
 
 
 class Room extends StatefulWidget{
+  const Room({super.key});
+
   @override
   _RoomState createState() => _RoomState();
 }
@@ -39,7 +42,7 @@ class _RoomState extends State<Room> {
               color: Colors.black54,
             )
         ),
-        title: const Text("Room", style: TextStyle(color: Colors.black)),
+        title: const Text("Room", style: TextStyle(color: CustomColors.blackk)),
         centerTitle: false,
       ),
       body: SafeArea(
@@ -65,7 +68,7 @@ class _RoomState extends State<Room> {
       decoration: const BoxDecoration(
         border: Border(
           top: BorderSide(
-            color: Colors.divider,
+            color: CustomColors .divider,
             width: 1.0,
           )
         )
@@ -82,7 +85,7 @@ class _RoomState extends State<Room> {
             ),
           ),
           IconButton(
-            icon: Icon(Icons.send, color: Colors.primary),
+            icon: const Icon(Icons.send, color: CustomColors.primary),
             onPressed: () {
               _handleSubmitted(_textController.text);
             },
@@ -101,27 +104,27 @@ class ChatMessage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 8.0),
+      margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 8.0),
       child: Align(
         alignment: isMyMessage ? Alignment.topRight : Alignment.topLeft,
         child: Container(
           constraints: BoxConstraints(
             maxWidth: MediaQuery.of(context).size.width *0.8
           ),
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           decoration: BoxDecoration(
-            color: isMyMessage ? Colors.primary : Colors.white,
+            color: isMyMessage ? CustomColors.primary : Colors.white,
             borderRadius:BorderRadius.only(
-                topLeft: Radius.circular(10.0),
-                topRight:Radius.circular(10.0),
-                bottomLeft: isMyMessage ? Radius.circular(10.0) : Radius.zero,
-                bottomRight: isMyMessage? Radius.zero : Radius.circular(10.0),
+                topLeft: const Radius.circular(10.0),
+                topRight:const Radius.circular(10.0),
+                bottomLeft: isMyMessage ? const Radius.circular(10.0) : Radius.zero,
+                bottomRight: isMyMessage? Radius.zero : const Radius.circular(10.0),
 
             )
           ),
           child: Text(
             text,
-            style: TextStyle(color: isMyMessage ? Colors.white : Colors.black),
+            style: TextStyle(color: isMyMessage ? Colors.white : CustomColors.blackk),
           ),
         ),
       ),

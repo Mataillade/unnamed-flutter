@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:unnamed/screens/home/Chat/room/room.dart';
 import 'package:unnamed/widgets/buttons/favorite.widget.dart';
 
+import '../../util/exentions/colors.extentions.dart';
+
 
 
 class ContactWidget extends StatelessWidget {
@@ -26,7 +28,7 @@ class ContactWidget extends StatelessWidget {
             // Action à effectuer lorsqu'on appuie sur le Container
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => Room()),
+              MaterialPageRoute(builder: (context) => const Room()),
             );
           },
           child: Container(
@@ -37,7 +39,7 @@ class ContactWidget extends StatelessWidget {
               children: [
                 Text("Couocu", textScaleFactor: 1.2, style: TextStyle(fontWeight:FontWeight.bold )),
                 SizedBox(height: 5),
-                Text("hey", style: TextStyle(color: Colors.secondary_text, fontWeight: FontWeight.w400),)
+                Text("hey", style: TextStyle(color: CustomColors.secondary_text, fontWeight: FontWeight.w400),)
               ],
             ),
           ),
@@ -46,7 +48,7 @@ class ContactWidget extends StatelessWidget {
           alignment: Alignment.center,
           width: MediaQuery.of(context).size.width* 0.1,
 
-          child: FavoriButton()
+          child: const FavoriButton()
         )
       ],
     );

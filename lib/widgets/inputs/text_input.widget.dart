@@ -1,5 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../../util/exentions/colors.extentions.dart';
 
 class TextInput extends StatelessWidget {
 
@@ -14,7 +15,7 @@ class TextInput extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 10.0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8.0),
-        color: Colors.background
+        color: CustomColors.background
       ),
       child: TextField (
         decoration: InputDecoration(

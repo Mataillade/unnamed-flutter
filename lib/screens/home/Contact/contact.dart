@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:unnamed/widgets/Contact/contact.widget.dart';
 
+import '../../../util/exentions/colors.extentions.dart';
+
 class Contact extends StatelessWidget {
   const Contact({super.key});
 
@@ -13,7 +15,7 @@ class Contact extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         automaticallyImplyLeading: false,
-        title: const Text("Contact", style: TextStyle(color: Colors.black),),
+        title: const Text("Contact", style: TextStyle(color: CustomColors.blackk),),
         centerTitle: false,
         titleSpacing: 24,
       ),

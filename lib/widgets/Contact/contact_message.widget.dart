@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:unnamed/util/exentions/colors.extentions.dart';
 
 import '../../screens/home/Chat/room/room.dart';
 
 class ContactMessageWidget extends StatelessWidget {
+  const ContactMessageWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -10,7 +13,7 @@ class ContactMessageWidget extends StatelessWidget {
         // Action à effectuer lorsqu'on appuie sur le Container
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => Room()),
+          MaterialPageRoute(builder: (context) => const Room()),
         );
       },
       child: Row(
@@ -34,7 +37,7 @@ class ContactMessageWidget extends StatelessWidget {
                 Text("Couocu", textScaleFactor: 1.2, style: TextStyle(fontWeight:FontWeight.bold )),
                 SizedBox(height: 5),
                 Text("hazndkjanjdzadbhkazbdhkbajhdbazjhdbvajhldvhjlazvdjhvajldvey",
-                  style: TextStyle(color: Colors.secondary_text, fontWeight: FontWeight.w400),
+                  style: TextStyle(color: CustomColors.secondary_text, fontWeight: FontWeight.w400),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 )
@@ -42,11 +45,11 @@ class ContactMessageWidget extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(left: 20),
+            margin: const EdgeInsets.only(left: 20),
             alignment: Alignment.center,
-            child: Text(
+            child: const Text(
               "17/01",
-              style: TextStyle(color: Colors.secondary_text),
+              style: TextStyle(color: CustomColors.secondary_text),
             ),
           ),
         ],

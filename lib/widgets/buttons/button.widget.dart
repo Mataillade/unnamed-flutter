@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../util/exentions/colors.extentions.dart';
+
 class ButtonWidget extends StatelessWidget {
 
   final VoidCallback onPressed;
@@ -13,7 +15,7 @@ class ButtonWidget extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.primary,
+        backgroundColor: CustomColors.primary,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(50.0),
         ),
