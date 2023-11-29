@@ -1,4 +1,5 @@
 // Flutter imports:
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show Brightness, SystemChrome, SystemUiOverlayStyle;
@@ -23,6 +24,16 @@ class Login extends StatelessWidget{
 
     // Obtain the auth details from the request
     final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
+
+    DocumentSnapshot userSnapshot = await FirebaseFirestore.instance.collection('users').doc(googleUser?.id).get();
+
+    if (!userSnapshot.exists) {
+      await FirebaseFirestore.instance.collection("users").doc(googleUser?.id).set({
+        'username': googleUser?.displayName,
+        'email': googleUser?.email
+      });
+      print('User added to Firestore successfully');
+    }
 
     // Create a new credential
     final credential = GoogleAuthProvider.credential(
