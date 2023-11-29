@@ -57,6 +57,9 @@ flutter {
     source '../..'
 }
 
+apply plugin: 'com.android.application'
+
 dependencies {
     implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.google.android.gms:play-services-auth:20.7.0'
 }
