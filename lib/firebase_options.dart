@@ -63,6 +63,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '814394473847',
     projectId: 'unnamed-flutter',
     storageBucket: 'unnamed-flutter.appspot.com',
+    iosClientId: '814394473847-gs2dvv6ph0us4lo9b6hs2fcr29ok88fk.apps.googleusercontent.com',
     iosBundleId: 'com.unnamed.unnamed',
   );
 }
