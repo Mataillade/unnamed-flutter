@@ -11,10 +11,10 @@ import 'package:unnamed/screens/onboard/onboard.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {
+  runApp(const MyApp());
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
