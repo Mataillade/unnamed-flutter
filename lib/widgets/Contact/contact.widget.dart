@@ -5,11 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:unnamed/screens/home/Chat/room/room.dart';
 import 'package:unnamed/util/function/functions.dart';
 import 'package:unnamed/widgets/buttons/favorite.widget.dart';
+import '../../Model/users.model.dart';
 import '../../util/exentions/colors.extentions.dart';
 
 class ContactWidget extends StatelessWidget {
-  final String title;
-  const ContactWidget({super.key, required this.title});
+  final Users user;
+  const ContactWidget({super.key, required this.user});
 
   @override
   Widget build(BuildContext context) {
@@ -21,16 +22,16 @@ class ContactWidget extends StatelessWidget {
           alignment: Alignment.center,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16.0),
-              color: generateColor(getInitials(title))
+              color: generateColor(getInitials(user.username))
           ),
-          child: Text(getInitials(title), textScaleFactor: 2, style: TextStyle(color: Colors.white),),
+          child: Text(getInitials(user.username), textScaleFactor: 2, style: TextStyle(color: Colors.white),),
         ) ,
         InkWell(
           onTap: () {
             // Action à effectuer lorsqu'on appuie sur le Container
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) =>  Room(title: title,)),
+              MaterialPageRoute(builder: (context) =>  Room(user: user,)),
             );
           },
           child: Container(
@@ -39,7 +40,7 @@ class ContactWidget extends StatelessWidget {
             child:  Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(title, textScaleFactor: 1.2, style: TextStyle(fontWeight:FontWeight.bold )),
+                Text(user.username, textScaleFactor: 1.2, style: TextStyle(fontWeight:FontWeight.bold )),
                 SizedBox(height: 5),
                 Text("last Connexion : Today", style: TextStyle(color: CustomColors.secondary_text, fontWeight: FontWeight.w400),)
               ],

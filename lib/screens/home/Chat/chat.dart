@@ -6,7 +6,10 @@ import 'package:unnamed/util/exentions/colors.extentions.dart';
 import 'package:unnamed/widgets/Contact/contact_message.widget.dart';
 
 class Chat extends StatelessWidget {
-  final List<String> persons = <String>['A YE', 'B ENE','ZDZD NO', 'D Dp', 'ELAZ?D d', 'FFA Ce'];
+  //make the request to get all users on the database firestore
+
+
+  final List<String> persons = <String>["A", "B", "C"];
 
 
    Chat({super.key});
@@ -29,7 +32,7 @@ class Chat extends StatelessWidget {
           itemBuilder: (BuildContext context, int index) {
           return Container(
             margin:const EdgeInsets.symmetric(vertical: 10),
-            child:  ContactMessageWidget(title: persons[index])
+            //child:  ContactMessageWidget(user: persons[index])
           );
         }
       )

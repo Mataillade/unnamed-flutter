@@ -4,11 +4,12 @@ import 'package:flutter/material.dart';
 // Project imports:
 import 'package:unnamed/util/exentions/colors.extentions.dart';
 import 'package:unnamed/util/function/functions.dart';
+import '../../Model/users.model.dart';
 import '../../screens/home/Chat/room/room.dart';
 
 class ContactMessageWidget extends StatelessWidget {
-  final String title;
-  const ContactMessageWidget({super.key, required this.title});
+  final Users user;
+  const ContactMessageWidget({super.key, required this.user});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class ContactMessageWidget extends StatelessWidget {
         // Action à effectuer lorsqu'on appuie sur le Container
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => Room(title: title)),
+          MaterialPageRoute(builder: (context) => Room(user: user)),
         );
       },
       child: Row(
@@ -28,9 +29,9 @@ class ContactMessageWidget extends StatelessWidget {
             alignment: Alignment.center,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16.0),
-                color: generateColor(getInitials(title))
+                color: generateColor(getInitials(user.username))
             ),
-            child: Text(getInitials(title), textScaleFactor: 2, style: const TextStyle(color: Colors.white),),
+            child: Text(getInitials(user.username), textScaleFactor: 2, style: const TextStyle(color: Colors.white),),
           ) ,
           Container(
             margin: const EdgeInsets.only(left: 10.0),
@@ -38,7 +39,7 @@ class ContactMessageWidget extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(title, textScaleFactor: 1.2, style: TextStyle(fontWeight:FontWeight.bold )),
+                Text(user.username, textScaleFactor: 1.2, style: TextStyle(fontWeight:FontWeight.bold )),
                 SizedBox(height: 5),
                 Text("hazndkjanjdzadbhkazbdhkbajhdbazjhdbvajhldvhjlazvdjhvajldvey",
                   style: TextStyle(color: CustomColors.secondary_text, fontWeight: FontWeight.w400),

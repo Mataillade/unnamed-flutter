@@ -71,7 +71,7 @@ class Contact extends StatelessWidget {
                 Users user = usersList[index];
                 return Container(
                   margin: const EdgeInsets.symmetric(vertical: 10),
-                  child: ContactWidget(title: user.username),
+                  child: ContactWidget(user: user),
                 );
               },
               separatorBuilder: (BuildContext context, int index) =>
