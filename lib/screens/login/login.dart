@@ -2,6 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show Brightness, SystemChrome, SystemUiOverlayStyle;
 
+// Package imports:
+import 'package:flutter_svg/flutter_svg.dart';
+
 // Project imports:
 import 'package:unnamed/screens/home/home.dart';
 import 'package:unnamed/widgets/buttons/button.widget.dart';
@@ -44,33 +47,53 @@ class Login extends StatelessWidget{
           padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height * 0.1 ),
           child: Column(
             children: [
-              Container(
-                width: 100,
-                height: 100,
-                decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: CustomColors.secondary_background,
-                ),
-                child: const Icon(
+              PhysicalModel(
+                color: CustomColors.secondary_background,
+                elevation: 3,
+                shape: BoxShape.circle,
+                child: Container(
+                  width: 100,
+                  height: 100,
+                  child: const Icon(
                     Icons.person_outlined,
                     size: 50.0,
+                  ),
                 ),
               ),
-              const SizedBox(height: 30),
+
+              const SizedBox(height: 50),
               FractionallySizedBox(
-                widthFactor: 0.8,
+                widthFactor: 0.5,
                 child: Column(
                   children: [
-                    const TextInput(hint: "Entrez le text ici",),
-                    const SizedBox(height: 15),
-                    const TextInput(hint: "Entrez le text ici",),
-                    const SizedBox(height: 30),
-                    FractionallySizedBox(
-                      widthFactor: 0.8,
-                      child: ButtonWidget(onPressed:() {
-                        Navigator.push(context,  MaterialPageRoute(builder: (context)=> const Home()));
-                      }, text: 'Save',),
-                    ),
+                    InkWell(
+                      onTap: () {
+                        print("boutton touchhé");
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> const Home()));
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10.0),
+                          color: CustomColors.primary,
+                        ),
+                        padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.all(2),
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.white
+                              ),
+                              child: SvgPicture.asset("assets/Google.svg"),
+                            ),
+
+                            Text("Sign Up", style: TextStyle(color: Colors.white ,fontSize: 24, fontWeight: FontWeight.bold),)
+                          ],
+                        ),
+                      ),
+                    )
                   ],
                 ),
               )
