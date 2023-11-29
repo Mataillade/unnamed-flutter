@@ -1,11 +1,11 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
 import 'package:unnamed/screens/home/Chat/room/room.dart';
 import 'package:unnamed/util/function/functions.dart';
 import 'package:unnamed/widgets/buttons/favorite.widget.dart';
-
 import '../../util/exentions/colors.extentions.dart';
-
-
 
 class ContactWidget extends StatelessWidget {
   final String title;

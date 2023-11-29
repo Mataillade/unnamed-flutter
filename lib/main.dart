@@ -1,10 +1,19 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+// Package imports:
+import 'package:firebase_core/firebase_core.dart';
+
+// Project imports:
 import 'package:unnamed/screens/login/login.dart';
-
 import 'package:unnamed/screens/onboard/onboard.dart';
+import 'firebase_options.dart';
 
-void main() {
+Future<void> main() async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 

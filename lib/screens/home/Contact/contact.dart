@@ -1,6 +1,8 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:unnamed/widgets/Contact/contact.widget.dart';
 
+// Project imports:
+import 'package:unnamed/widgets/Contact/contact.widget.dart';
 import '../../../util/exentions/colors.extentions.dart';
 
 class Contact extends StatelessWidget {

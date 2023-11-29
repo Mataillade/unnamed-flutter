@@ -1,5 +1,7 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
 
+// Project imports:
 import '../../util/exentions/colors.extentions.dart';
 
 class FavoriButton extends StatefulWidget {

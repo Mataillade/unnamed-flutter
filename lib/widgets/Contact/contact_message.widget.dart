@@ -1,7 +1,9 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
 import 'package:unnamed/util/exentions/colors.extentions.dart';
 import 'package:unnamed/util/function/functions.dart';
-
 import '../../screens/home/Chat/room/room.dart';
 
 class ContactMessageWidget extends StatelessWidget {
