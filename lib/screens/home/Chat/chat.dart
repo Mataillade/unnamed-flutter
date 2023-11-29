@@ -3,7 +3,8 @@ import 'package:unnamed/util/exentions/colors.extentions.dart';
 import 'package:unnamed/widgets/Contact/contact_message.widget.dart';
 
 class Chat extends StatelessWidget {
-  final List<String> entries = <String>['A', 'B','C', 'D', 'E', 'F'];
+  final List<String> persons = <String>['A YE', 'B ENE','ZDZD NO', 'D Dp', 'ELAZ?D d', 'FFA Ce'];
+
 
    Chat({super.key});
 
@@ -20,12 +21,12 @@ class Chat extends StatelessWidget {
       ),
       body: ListView.separated(
           padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
-          itemCount: entries.length,
+          itemCount: persons.length,
           separatorBuilder: (BuildContext context, int index) => const Divider(color: Colors.white,),
           itemBuilder: (BuildContext context, int index) {
           return Container(
             margin:const EdgeInsets.symmetric(vertical: 10),
-            child: const ContactMessageWidget()
+            child:  ContactMessageWidget(title: persons[index])
           );
         }
       )

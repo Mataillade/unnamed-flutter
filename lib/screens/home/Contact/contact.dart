@@ -4,11 +4,12 @@ import 'package:unnamed/widgets/Contact/contact.widget.dart';
 import '../../../util/exentions/colors.extentions.dart';
 
 class Contact extends StatelessWidget {
+
   const Contact({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final List<String> entries = <String>['A', 'B','C', 'D', 'E', 'F'];
+    final List<String> entries = <String>['A A', 'B B','C C', 'D D', 'E E', 'F F'];
 
     return  Scaffold(
       appBar: AppBar(
@@ -25,7 +26,7 @@ class Contact extends StatelessWidget {
         itemBuilder: (BuildContext context, int index){
           return  Container(
               margin: const EdgeInsets.symmetric(vertical: 10) ,
-              child: const ContactWidget()
+              child: ContactWidget(title: entries[index],)
           );
         },
         separatorBuilder: (BuildContext context, int index) => const Divider(),

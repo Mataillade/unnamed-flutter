@@ -3,13 +3,15 @@ import 'package:unnamed/util/exentions/colors.extentions.dart';
 
 
 class Room extends StatefulWidget{
-  const Room({super.key});
+  final String title;
+  const Room({super.key, required this.title});
 
   @override
   _RoomState createState() => _RoomState();
 }
 
 class _RoomState extends State<Room> {
+
   final TextEditingController _textController = TextEditingController();
   final List<ChatMessage> _messages = [];
   ChatMessage newmsg = const ChatMessage(text: "coucou c'est pour tester", isMyMessage: false,);
@@ -42,7 +44,7 @@ class _RoomState extends State<Room> {
               color: Colors.black54,
             )
         ),
-        title: const Text("Room", style: TextStyle(color: CustomColors.blackk)),
+        title:  Text(widget.title, style: TextStyle(color: CustomColors.blackk)),
         centerTitle: false,
       ),
       body: SafeArea(

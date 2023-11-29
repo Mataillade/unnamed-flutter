@@ -14,4 +14,6 @@ extension CustomColors on Colors {
   static const Color divider = Color(0xFFEDEDED);
 
   static const Color secondary_text = Color(0xFFA4A4A4);
+
+  static const Color warining = Color(0xFFFDCF41);
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:unnamed/screens/home/Chat/room/room.dart';
+import 'package:unnamed/util/function/functions.dart';
 import 'package:unnamed/widgets/buttons/favorite.widget.dart';
 
 import '../../util/exentions/colors.extentions.dart';
@@ -7,7 +8,8 @@ import '../../util/exentions/colors.extentions.dart';
 
 
 class ContactWidget extends StatelessWidget {
-  const ContactWidget({super.key});
+  final String title;
+  const ContactWidget({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -19,27 +21,27 @@ class ContactWidget extends StatelessWidget {
           alignment: Alignment.center,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16.0),
-              color: Colors.blue
+              color: generateColor(getInitials(title))
           ),
-          child: const Text("RD", textScaleFactor: 2, style: TextStyle(color: Colors.white),),
+          child: Text(getInitials(title), textScaleFactor: 2, style: TextStyle(color: Colors.white),),
         ) ,
         InkWell(
           onTap: () {
             // Action à effectuer lorsqu'on appuie sur le Container
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const Room()),
+              MaterialPageRoute(builder: (context) =>  Room(title: title,)),
             );
           },
           child: Container(
             margin: const EdgeInsets.only(left: 10.0),
             width: MediaQuery.of(context).size.width* 0.6,
-            child: const Column(
+            child:  Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Couocu", textScaleFactor: 1.2, style: TextStyle(fontWeight:FontWeight.bold )),
+                Text(title, textScaleFactor: 1.2, style: TextStyle(fontWeight:FontWeight.bold )),
                 SizedBox(height: 5),
-                Text("hey", style: TextStyle(color: CustomColors.secondary_text, fontWeight: FontWeight.w400),)
+                Text("last Connexion : Today", style: TextStyle(color: CustomColors.secondary_text, fontWeight: FontWeight.w400),)
               ],
             ),
           ),

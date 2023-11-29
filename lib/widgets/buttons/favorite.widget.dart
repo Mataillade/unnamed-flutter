@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../util/exentions/colors.extentions.dart';
+
 class FavoriButton extends StatefulWidget {
   const FavoriButton({super.key});
 
@@ -15,7 +17,7 @@ class _FavoriButtonState extends State<FavoriButton> {
     return IconButton(
       icon: Icon(
         isFavorited ? Icons.star : Icons.star_border,
-        color: isFavorited ? Colors.yellow : null,
+        color: isFavorited ? CustomColors.warining : null,
       ),
       onPressed: () {
         setState(() {

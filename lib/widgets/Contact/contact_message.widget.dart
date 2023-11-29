@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:unnamed/util/exentions/colors.extentions.dart';
+import 'package:unnamed/util/function/functions.dart';
 
 import '../../screens/home/Chat/room/room.dart';
 
 class ContactMessageWidget extends StatelessWidget {
-  const ContactMessageWidget({super.key});
+  final String title;
+  const ContactMessageWidget({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +15,7 @@ class ContactMessageWidget extends StatelessWidget {
         // Action à effectuer lorsqu'on appuie sur le Container
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const Room()),
+          MaterialPageRoute(builder: (context) => Room(title: title)),
         );
       },
       child: Row(
@@ -24,17 +26,17 @@ class ContactMessageWidget extends StatelessWidget {
             alignment: Alignment.center,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16.0),
-                color: Colors.blue
+                color: generateColor(getInitials(title))
             ),
-            child: const Text("RD", textScaleFactor: 2, style: TextStyle(color: Colors.white),),
+            child: Text(getInitials(title), textScaleFactor: 2, style: const TextStyle(color: Colors.white),),
           ) ,
           Container(
             margin: const EdgeInsets.only(left: 10.0),
             width: MediaQuery.of(context).size.width* 0.6,
-            child: const Column(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Couocu", textScaleFactor: 1.2, style: TextStyle(fontWeight:FontWeight.bold )),
+                Text(title, textScaleFactor: 1.2, style: TextStyle(fontWeight:FontWeight.bold )),
                 SizedBox(height: 5),
                 Text("hazndkjanjdzadbhkazbdhkbajhdbazjhdbvajhldvhjlazvdjhvajldvey",
                   style: TextStyle(color: CustomColors.secondary_text, fontWeight: FontWeight.w400),
